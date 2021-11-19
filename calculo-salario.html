@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular descuestos de salario | El Salvador</title>
+    <link rel="stylesheet" href="css/calculo-salario.css">
+</head>
+<body>
+   <header>
+       <nav>
+           <h1 class="TextCenter">¡Calcula tu salario!</h1>
+
+       </nav>
+    </header>
+    
+    <section class="boxBackground TextCenter">
+        <label for="salario">Ingresa tu salario:</label>
+        <input placeholder="3000" class="inputFormat" type="number" id="salario">
+        <label for="tipo">Selecciona el tipo:</label>
+        <select class="inputFormat" id="tipo">
+            <option value="30">Mensual</option>
+            <option value="15">Quincenal</option>
+            <option value="7">semanal</option>
+        </select>
+        <button type="button" onclick="CalcularDescuentos()">Calcular</button>
+    </section>
+    <section class="boxBackground ">
+        <p class="TextCenter">Los descuentos correspondientes a tu salario son los siguientes: </p>
+        <div >
+            <table class="divResultados">
+                <tr>
+                    <td><strong>ISSS (3%):</strong></td>
+                    <td><label id="IsssResult"></label></td>
+                </tr>
+                <tr>
+                    <td><strong>AFP (7.25%):</strong></td>
+                    <td><label id="AfpResult"></label></td>
+                </tr>
+                <tr>
+                    <td><strong>Renta imponible:</strong></td>
+                    <td><label id="RentaImponibleResult"></label></td>
+                </tr>
+                <tr>
+                    <td><strong>Impuesto sobre renta:</strong></td>
+                    <td><label id="RentaResult"></label><label id="RentaPorcentajeResult"></label></td>
+                </tr>
+                <tr>
+                    <td><strong>Total de descuentos:</strong></td>
+                    <td><label id="TotalDescuentosResult"></label></td>
+                </tr>
+                <tr>
+                    <td><strong>Salario liquido:</strong></td>
+                    <td><label id="SalarioResult"></label></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer class="TextCenter">&hearts; made with love by nadelina.</footer>
+    <script src="js/tablas-de-retencion.js"></script>
+    <script src="js/calculo-salario.js"></script>
+</body>
+</html>
