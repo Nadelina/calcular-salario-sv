@@ -11,21 +11,25 @@ function calcularRenta(salario, tipo){
             semanal.map(
             function(retencion){
                 if(retencion.desde < salario && retencion.hasta >= salario){
+                    console.log("minimo");
                     tramo = retencion;
                 }else if(retencion.desde < salario && retencion.hasta == "En adelante"){
                     tramo = retencion;
+                    console.log("alto");
                 }
             }); 
-            
+            console.log("tramo: " + tramo.tramo);
             //evaluo si aplica retención
             if(tramo.tramo == "TRAMO I"){
                 renta = 0;
             }else{
                 const valor1 = salario - tramo.exceso;
-                const valor2 = valor1 * parseInt((valor1 * (100- tramo.porcentaje))/100);
+                console.log("valor renta 1: " + valor1);
+                const valor2 = (valor1 *  tramo.porcentaje)/100;
+                console.log("valor renta 2: " + valor2);
                 renta = valor2 + tramo.cuota;
             }
-
+            console.log("renta: " + renta);
             break;
         case '15':
                 quincenal.map(
@@ -41,7 +45,7 @@ function calcularRenta(salario, tipo){
                     renta = 0;
                 }else{
                     const valor1 = salario - tramo.exceso;
-                    const valor2 = valor1 * parseInt((valor1 * (100- tramo.porcentaje))/100);
+                    const valor2 = (valor1 *  tramo.porcentaje)/100;
                     renta = valor2 + tramo.cuota;
                 }
             break;
